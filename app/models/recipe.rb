@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  has_many :ingredients 
+  has_many :ingredients
 
   def ingredients_attributes=(ingredients_attributes)
     ingredients_attributes.each do |f, ingredient_attributes|
