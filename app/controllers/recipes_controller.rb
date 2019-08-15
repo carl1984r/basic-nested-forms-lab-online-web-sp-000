@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
   end
 
   def create
+    
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
@@ -21,5 +22,13 @@ class RecipesController < ApplicationController
     else
       render :new
     end
+    
   end
+
+  private
+  
+  def recipe_params
+    params.require(:recipe).permit(:title, ingredients_attributes: [:name, :quantity])
+  end
+  
 end
