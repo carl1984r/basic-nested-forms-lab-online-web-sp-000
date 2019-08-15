@@ -29,7 +29,7 @@ class RecipesController < ApplicationController
 
   private
 
-  def recipe_params 
+  def recipe_params
     binding.pry
     params.require(:recipe).permit(:title, ingredients_attributes: [:name, :quantity])
   end
